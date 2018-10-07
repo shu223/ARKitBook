@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="VideoFormatConfiguration" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pFG-HA-ENG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54F-M5-QTs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP4-f9-c8U">
+                                <rect key="frame" x="210" y="617" width="149" height="30"/>
+                                <state key="normal" title="Change Video Format"/>
+                                <connections>
+                                    <action selector="selectButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="NY1-Gb-pql"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5FQ-xH-5pt">
+                                <rect key="frame" x="58" y="60" width="259" height="29"/>
+                                <segments>
+                                    <segment title="World"/>
+                                    <segment title="Orien"/>
+                                    <segment title="Face"/>
+                                    <segment title="Image"/>
+                                    <segment title="Scan"/>
+                                </segments>
+                                <connections>
+                                    <action selector="configurationChanged:" destination="BV1-FR-VrT" eventType="valueChanged" id="lkv-cB-8GW"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuI-fQ-YRD">
+                                <rect key="frame" x="168" y="96" width="39.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nuI-fQ-YRD" firstAttribute="centerX" secondItem="pFG-HA-ENG" secondAttribute="centerX" id="7Jt-My-fQb"/>
+                            <constraint firstItem="5FQ-xH-5pt" firstAttribute="top" secondItem="bG9-Yi-kaQ" secondAttribute="top" constant="40" id="8sN-J9-CFQ"/>
+                            <constraint firstItem="bG9-Yi-kaQ" firstAttribute="bottom" secondItem="SP4-f9-c8U" secondAttribute="bottom" constant="20" id="IOs-Gh-VCR"/>
+                            <constraint firstItem="54F-M5-QTs" firstAttribute="top" secondItem="pFG-HA-ENG" secondAttribute="top" id="P8S-w5-2IF"/>
+                            <constraint firstItem="SP4-f9-c8U" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bG9-Yi-kaQ" secondAttribute="leading" symbolic="YES" id="Uev-Hp-OEv"/>
+                            <constraint firstAttribute="bottom" secondItem="54F-M5-QTs" secondAttribute="bottom" id="VZ1-Jm-MHJ"/>
+                            <constraint firstItem="5FQ-xH-5pt" firstAttribute="centerX" secondItem="pFG-HA-ENG" secondAttribute="centerX" id="YA9-RV-boL"/>
+                            <constraint firstItem="54F-M5-QTs" firstAttribute="leading" secondItem="pFG-HA-ENG" secondAttribute="leading" id="ae1-ea-0W2"/>
+                            <constraint firstAttribute="trailing" secondItem="54F-M5-QTs" secondAttribute="trailing" id="cwo-0f-3PD"/>
+                            <constraint firstItem="nuI-fQ-YRD" firstAttribute="top" secondItem="5FQ-xH-5pt" secondAttribute="bottom" constant="8" id="mEb-yU-vck"/>
+                            <constraint firstItem="bG9-Yi-kaQ" firstAttribute="trailing" secondItem="SP4-f9-c8U" secondAttribute="trailing" constant="16" id="vMN-mf-Q4F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bG9-Yi-kaQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="configurationLabel" destination="nuI-fQ-YRD" id="NZE-fj-hVA"/>
+                        <outlet property="sceneView" destination="54F-M5-QTs" id="i99-uE-DVf"/>
+                        <outlet property="segmentedCtl" destination="5FQ-xH-5pt" id="Sc7-SZ-jPF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

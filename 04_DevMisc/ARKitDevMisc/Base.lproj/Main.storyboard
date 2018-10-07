@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ARDebug" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ARb-jp-KXU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zcf-y6-pd7">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </arscnView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgw-Sd-djG">
+                                <rect key="frame" x="8" y="36" width="359" height="20.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zcf-y6-pd7" firstAttribute="leading" secondItem="xsu-92-IL9" secondAttribute="leading" id="RI1-vF-gVP"/>
+                            <constraint firstItem="xsu-92-IL9" firstAttribute="trailing" secondItem="Zcf-y6-pd7" secondAttribute="trailing" id="VeM-b0-bSV"/>
+                            <constraint firstItem="rgw-Sd-djG" firstAttribute="leading" secondItem="xsu-92-IL9" secondAttribute="leading" constant="8" id="e5U-I3-eOG"/>
+                            <constraint firstItem="xsu-92-IL9" firstAttribute="bottom" secondItem="Zcf-y6-pd7" secondAttribute="bottom" id="edX-6N-0Ez"/>
+                            <constraint firstItem="rgw-Sd-djG" firstAttribute="top" secondItem="xsu-92-IL9" secondAttribute="top" constant="16" id="mun-1r-BmF"/>
+                            <constraint firstItem="xsu-92-IL9" firstAttribute="trailing" secondItem="rgw-Sd-djG" secondAttribute="trailing" constant="8" id="wlB-k6-kes"/>
+                            <constraint firstItem="Zcf-y6-pd7" firstAttribute="top" secondItem="xsu-92-IL9" secondAttribute="top" id="yCI-PM-hYO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xsu-92-IL9"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="Zcf-y6-pd7" id="pjj-vD-EIq"/>
+                        <outlet property="trackingStateLabel" destination="rgw-Sd-djG" id="zus-89-Vc9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
