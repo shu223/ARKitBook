@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ImageDetectionAndTracking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="15A-Os-Fxb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZvU-12-CgD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqR-dr-t8r">
+                                <rect key="frame" x="8" y="40" width="359" height="20.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="inM-1X-ssi">
+                                <rect key="frame" x="8" y="619" width="359" height="29"/>
+                                <segments>
+                                    <segment title="Detection"/>
+                                    <segment title="Tracking"/>
+                                </segments>
+                                <connections>
+                                    <action selector="configurationSwitched:" destination="BV1-FR-VrT" eventType="valueChanged" id="P9g-9b-ccR"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZvU-12-CgD" firstAttribute="leading" secondItem="15A-Os-Fxb" secondAttribute="leading" id="4Lh-e5-KOR"/>
+                            <constraint firstItem="QqR-dr-t8r" firstAttribute="top" secondItem="x5J-GW-tip" secondAttribute="top" constant="20" id="AqP-J3-cfd"/>
+                            <constraint firstItem="inM-1X-ssi" firstAttribute="leading" secondItem="x5J-GW-tip" secondAttribute="leading" constant="8" id="Hmp-rf-pTR"/>
+                            <constraint firstAttribute="bottom" secondItem="ZvU-12-CgD" secondAttribute="bottom" id="IIQ-7C-tJt"/>
+                            <constraint firstItem="QqR-dr-t8r" firstAttribute="leading" secondItem="x5J-GW-tip" secondAttribute="leading" constant="8" id="OPB-nd-7a6"/>
+                            <constraint firstItem="x5J-GW-tip" firstAttribute="bottom" secondItem="inM-1X-ssi" secondAttribute="bottom" constant="20" id="TF5-gW-U2E"/>
+                            <constraint firstItem="x5J-GW-tip" firstAttribute="trailing" secondItem="QqR-dr-t8r" secondAttribute="trailing" constant="8" id="Yoz-c9-0qT"/>
+                            <constraint firstItem="ZvU-12-CgD" firstAttribute="top" secondItem="15A-Os-Fxb" secondAttribute="top" id="gM9-DI-Xtp"/>
+                            <constraint firstItem="x5J-GW-tip" firstAttribute="trailing" secondItem="inM-1X-ssi" secondAttribute="trailing" constant="8" id="gui-K0-GcF"/>
+                            <constraint firstAttribute="trailing" secondItem="ZvU-12-CgD" secondAttribute="trailing" id="pFK-dU-LQX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="x5J-GW-tip"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="ZvU-12-CgD" id="DJB-vj-WVb"/>
+                        <outlet property="segmentedCtl" destination="inM-1X-ssi" id="ocw-z9-l6o"/>
+                        <outlet property="trackingStateLabel" destination="QqR-dr-t8r" id="2uX-zS-iRX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
