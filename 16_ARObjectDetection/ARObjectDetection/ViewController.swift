@@ -111,7 +111,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             if prevRes.identifier == result.identifier {
                 // 前回より良い場合は、前回のを削除
                 if prevRes.confidence < result.confidence {
-                    if let index = tags.index(of: tag) {
+                    if let index = tags.firstIndex(of: tag) {
                         tags.remove(at: index)
                     }
                     tag.removeFromParentNode()
