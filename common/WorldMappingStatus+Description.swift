@@ -19,6 +19,8 @@ extension ARFrame.WorldMappingStatus {
             return "World mapping is actively extending the map with the user's motion."
         case .mapped:
             return "World mapping has adequately mapped the visible area."
+        @unknown default:
+            fatalError()
         }
     }
 }
