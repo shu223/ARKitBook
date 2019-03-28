@@ -4,9 +4,13 @@ PODS:
 DEPENDENCIES:
   - ColorSlider
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ColorSlider
+
 SPEC CHECKSUMS:
   ColorSlider: fe0a511351837848076c30417522ab175ab8fea9
 
 PODFILE CHECKSUM: 662245b6f8fd1d83667edaecc484ae0ea9f85480
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.6.1
