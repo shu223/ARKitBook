@@ -19,9 +19,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     @IBOutlet var trackingStateLabel: UILabel!
     @IBOutlet var lookAtSwitch: UISwitch!
 
+    private var duckNode: SCNNode!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard let duckScene = SCNScene(named: "duck.scn", inDirectory: "models.scnassets/duck") else {fatalError()}
+        duckNode = duckScene.rootNode
+
         // Set the view's delegate
         sceneView.delegate = self
         sceneView.session.delegate = self
@@ -42,8 +47,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     // MARK: - Private
     
     private func loadModel(for node: SCNNode) {
-        guard let scene = SCNScene(named: "duck.scn", inDirectory: "models.scnassets/duck") else {fatalError()}
-        for child in scene.rootNode.childNodes {
+        for child in duckNode.childNodes {
             node.addChildNode(child)
         }
     }

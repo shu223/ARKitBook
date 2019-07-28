@@ -13,9 +13,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
+    private var virtualObjectNode: SCNNode!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 仮想オブジェクトのノードを作成
+        virtualObjectNode = loadModel()
+
         sceneView.delegate = self
         sceneView.session.delegate = self
         
@@ -53,13 +58,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         guard let planeAnchor = anchor as? ARPlaneAnchor else {fatalError()}
         print("anchor:\(anchor), node: \(node), node geometry: \(String(describing: node.geometry))")
         planeAnchor.addPlaneNode(on: node, contents: UIColor.yellow.withAlphaComponent(0.5))
-        
-        // 仮想オブジェクトのノードを作成
-        let virtualObjectNode = loadModel()
-        
+                
         DispatchQueue.main.async(execute: {
             // 仮想オブジェクトを乗せる
-            node.addChildNode(virtualObjectNode)
+            node.addChildNode(self.virtualObjectNode)
         })
     }
     

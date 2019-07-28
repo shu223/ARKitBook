@@ -21,7 +21,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var metalView: MetalRenderView!
     
     private var planeNode: SCNNode?
-    
+    private let virtualNode = VirtualObjectNode()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -85,7 +86,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         print("\(self.classForCoder)/" + #function)
         
-        let virtualNode = VirtualObjectNode()
         // 黒で塗る
         for child in virtualNode.childNodes {
             if let material = child.geometry?.firstMaterial {
@@ -95,7 +95,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         virtualNode.scale = SCNVector3Make(2, 2, 2)
         
         DispatchQueue.main.async(execute: {
-            node.addChildNode(virtualNode)
+            node.addChildNode(self.virtualNode)
         })
     }
     

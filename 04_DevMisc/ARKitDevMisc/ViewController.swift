@@ -11,7 +11,7 @@ import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
-    private var virtualObjectNode: SCNNode?
+    private var virtualObjectNode: SCNNode!
     
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet var trackingStateLabel: UILabel!
@@ -19,6 +19,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 仮想オブジェクトのノードを作成
+        virtualObjectNode = loadModel()
+
         sceneView.delegate = self
         
         // シーンを生成してARSCNViewにセット
@@ -61,12 +64,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // 平面アンカーを可視化
         planeAnchor.addPlaneNode(on: node, contents: UIColor.yellow)
         
-        // 仮想オブジェクトのノードを作成
-        let virtualObjectNode = loadModel()
-        
         DispatchQueue.main.async(execute: {
             // 仮想オブジェクトを乗せる
-            node.addChildNode(virtualObjectNode)
+            node.addChildNode(self.virtualObjectNode)
         })
     }
     
