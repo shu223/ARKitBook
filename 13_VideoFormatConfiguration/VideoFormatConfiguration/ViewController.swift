@@ -64,6 +64,18 @@ class ViewController: UIViewController {
             } else {
                 fatalError()
             }
+        case 5:
+            if #available(iOS 13.0, *) {
+                return ARBodyTrackingConfiguration()
+            } else {
+                fatalError()
+            }
+        case 6:
+            if #available(iOS 13.0, *) {
+                return ARPositionalTrackingConfiguration()
+            } else {
+                fatalError()
+            }
         default:
             fatalError()
         }
