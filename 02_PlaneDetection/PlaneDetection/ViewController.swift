@@ -37,7 +37,7 @@ extension ViewController: ARSCNViewDelegate {
         
         // 平面ジオメトリを持つノードを作成し、
         // 検出したアンカーに対応するノードに子ノードとして持たせる
-        planeAnchor.addPlaneNode(on: node, contents: color.withAlphaComponent(0.3))
+        planeAnchor.addPlaneNode(on: node, contents: color.withAlphaComponent(0.5))
     }
     
     // 対応するアンカーの現在の状態に合うようにノードが更新された

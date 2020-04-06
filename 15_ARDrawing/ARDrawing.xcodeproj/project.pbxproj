@@ -181,13 +181,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ARDrawing/Pods-ARDrawing-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ColorSlider/ColorSlider.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARDrawing/Pods-ARDrawing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ColorSlider.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARDrawing/Pods-ARDrawing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
