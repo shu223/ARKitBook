@@ -35,9 +35,10 @@ class MetalRenderer {
         // Set the default formats needed to render
         self.renderDestination.colorPixelFormat = .bgra8Unorm
         self.renderDestination.sampleCount = 1
-        
+        self.renderDestination.framebufferOnly = false
+
         commandQueue = device.makeCommandQueue()
-        
+
         prepareRenderPipelines(library: device.makeDefaultLibrary()!)
         
         // prepare vertex buffer(s)
