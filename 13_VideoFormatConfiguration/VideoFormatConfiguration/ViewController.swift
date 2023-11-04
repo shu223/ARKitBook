@@ -136,6 +136,10 @@ extension ViewController {
 
 extension ARConfiguration.VideoFormat {
     open override var description: String {
-        return "res: \(imageResolution), fps: \(framesPerSecond)"
+        if #available(iOS 16.0, *) {
+            return (isVideoHDRSupported ? "(HDR)" : "") + "res: \(imageResolution), fps: \(framesPerSecond)"
+        } else {
+            return "res: \(imageResolution), fps: \(framesPerSecond)"
+        }
     }
 }
